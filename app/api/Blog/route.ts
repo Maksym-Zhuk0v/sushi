@@ -12,14 +12,14 @@ export async function GET() {
   }
 }
 
-export async function POST(req: any) {
+export async function POST(req: Request) {
   try {
     const body = await req.json();
     const blogData = body.postedBlog;
 
     await Blog.create(blogData);
 
-    return NextResponse.json({ message: "Ticket Created" }, { status: 201 });
+    return NextResponse.json({ message: "Blog Created" }, { status: 201 });
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });

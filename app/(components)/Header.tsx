@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import logoName from "../../public/logo.jpeg";
+import logoName from "/public/logo.jpeg";
 import { Raleway } from "next/font/google";
 import Link from "next/link";
 

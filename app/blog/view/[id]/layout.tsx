@@ -1,7 +1,7 @@
 import PageComponent from "@/app/(components)/PageComponent";
 import PageLayout from "@/app/(components)/PageLayout";
 import HeaderText from "@/app/(components)/UI/HeaderText";
-import { BlogProvider } from "@/app/context/MyContext";
+import { BlogProvider } from "@/context/MyContext";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import React from "react";
 

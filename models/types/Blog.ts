@@ -1,5 +1,5 @@
 export type TBlog = {
-  _id: string;
+  _id?: string;
   title: string;
   image: string;
   lastModified: number;

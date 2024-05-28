@@ -8,7 +8,12 @@ interface BlogProviderProps {
   fatchetBlog: TBlog;
 }
 
-const BlogContext = createContext<any>(null);
+const BlogContext = createContext<TBlog>({
+  image: "",
+  title: "",
+  body: [{ bodyDescription: "", bodyTitle: "" }],
+  lastModified: 0,
+});
 
 export const useBlog = (): TBlog => {
   return useContext(BlogContext);

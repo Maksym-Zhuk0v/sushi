@@ -6,7 +6,7 @@ import PageComponent from "../(components)/PageComponent";
 import HeaderText from "../(components)/UI/HeaderText";
 import Link from "next/link";
 import { TMenu } from "@/models/types/Menu";
-
+PageComponent;
 interface MenuData {
   menu: TMenu[];
 }

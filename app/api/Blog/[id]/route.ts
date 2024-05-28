@@ -21,14 +21,14 @@ export async function DELETE(req: object, { params }: Params) {
   }
 }
 
-export async function PUT(req: any, { params }: Params) {
+export async function PUT(req: Request, { params }: Params) {
   try {
     const { id } = params;
 
     const body = await req.json();
     const blogData = body.submitedblog;
 
-    const updateTicketData = await Blog.findByIdAndUpdate(id, {
+    const updateBlogData = await Blog.findByIdAndUpdate(id, {
       ...blogData,
     });
 

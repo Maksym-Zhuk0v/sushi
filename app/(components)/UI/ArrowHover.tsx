@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import arroRight from "../../../public/ph-arrow-right-light.png";
+import arroRight from "/public/ph-arrow-right-light.png";
 
 interface IArrowHover {
   hover: boolean;

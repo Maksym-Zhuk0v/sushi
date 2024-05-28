@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRemove } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
 import Form from "@/app/(components)/Form";
-import { useBlog } from "@/app/context/MyContext";
+import { useBlog } from "@/context/MyContext";
 
 interface IEditBlog {
   params: Params;
@@ -30,7 +30,9 @@ const page = ({ params }: IEditBlog) => {
     router.refresh();
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
 
     const submitedblog = {
@@ -46,7 +48,7 @@ const page = ({ params }: IEditBlog) => {
       body: JSON.stringify({ submitedblog }),
     });
     if (!res.ok) {
-      throw new Error("Failed to update ticket");
+      throw new Error("Failed to update blog");
     }
 
     router.refresh();

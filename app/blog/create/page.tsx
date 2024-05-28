@@ -3,7 +3,7 @@
 import PageComponent from "@/app/(components)/PageComponent";
 import PageLayout from "@/app/(components)/PageLayout";
 import bg from "../../../public/modern-cafe-interior.webp";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import HeaderText from "@/app/(components)/UI/HeaderText";
 import { Raleway } from "next/font/google";
 import Form from "@/app/(components)/Form";
@@ -29,7 +29,9 @@ const page = () => {
     ],
   });
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     const postedBlog = { ...form, lastModified: Date.now() };
     const res = await fetch("/api/Blog", {
@@ -39,7 +41,7 @@ const page = () => {
       "Content-Type": "application/json",
     });
     if (!res.ok) {
-      throw new Error("Failed to create ticket");
+      throw new Error("Failed to create blog");
     }
     router.push("/blog");
     router.refresh();
