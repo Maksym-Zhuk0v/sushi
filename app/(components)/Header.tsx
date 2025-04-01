@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import logoName from "/public/logo.jpeg";
+import logoName from "../../public/logo.jpeg";
 import { Raleway } from "next/font/google";
 import Link from "next/link";
 
@@ -15,7 +15,7 @@ interface IHeader {
   className?: string;
 }
 
-const Header = ({ className }: IHeader) => {
+export const Header = ({ className }: IHeader) => {
   const [active, setActive] = useState(false);
 
   return (
@@ -34,6 +34,8 @@ const Header = ({ className }: IHeader) => {
         <Link href={"/"}>
           <Image
             src={logoName}
+            width={0}
+            height={0}
             alt="logo"
             className="h-header-logo w-auto cursor-pointer"
           ></Image>
@@ -90,6 +92,9 @@ const Header = ({ className }: IHeader) => {
               <Link className="header-link" href={"/"}>
                 STYLEGUIDE
               </Link>
+              <Link className="header-link" href={"/profile"}>
+                PROFILE
+              </Link>
               <div className="flex items-center">
                 <div className="rhomb" />
                 <div className="border-dflt-top w-5 h-one-px" />
@@ -102,5 +107,3 @@ const Header = ({ className }: IHeader) => {
     </>
   );
 };
-
-export default Header;

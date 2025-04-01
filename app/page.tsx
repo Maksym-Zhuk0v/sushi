@@ -1,12 +1,10 @@
-import SidebarCard from "./(components)/SidebarCard";
 import sidebar1 from "../public/person-bring-plate.webp";
 import sidebar2 from "../public/woman-sitting-at-table.webp";
 import sidebar3 from "../public/modern-cafe-interior.webp";
 import instagramIcon from "../public/ph_instagram-logo-light.png";
 import twitterIcon from "../public/ph_twitter-logo-light.png";
 import facebookIcon from "../public/ph_facebook-logo-light.png";
-import Corner from "./(components)/Corner";
-import PageLayout from "./(components)/PageLayout";
+import { Corner, PageLayout, SidebarCard } from "./(components)";
 
 export default async function Home() {
   return (

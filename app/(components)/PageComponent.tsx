@@ -6,7 +6,7 @@ interface IPageComponent {
   children: ReactNode;
 }
 
-const PageComponent = ({ children }: IPageComponent) => {
+export const PageComponent = ({ children }: IPageComponent) => {
   return (
     <>
       <div
@@ -39,5 +39,3 @@ const PageComponent = ({ children }: IPageComponent) => {
     </>
   );
 };
-
-export default PageComponent;

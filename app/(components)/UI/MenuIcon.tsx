@@ -10,7 +10,7 @@ const releway = Raleway({
   weight: "200",
 });
 
-const MenuIcon = ({ card }: IMenuIcon) => {
+export const MenuIcon = ({ card }: IMenuIcon) => {
   return (
     <div className="w-full flex gap-6 items-center">
       <div
@@ -34,5 +34,3 @@ const MenuIcon = ({ card }: IMenuIcon) => {
     </div>
   );
 };
-
-export default MenuIcon;

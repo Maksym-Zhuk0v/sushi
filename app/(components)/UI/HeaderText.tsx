@@ -5,7 +5,7 @@ interface IHeaderText {
   className?: string;
 }
 
-const HeaderText = ({ children, className }: IHeaderText) => {
+export const HeaderText = ({ children, className }: IHeaderText) => {
   return (
     <div className={`${className} flex gap-4 items-center mx-auto`}>
       <div className="flex items-center">
@@ -20,5 +20,3 @@ const HeaderText = ({ children, className }: IHeaderText) => {
     </div>
   );
 };
-
-export default HeaderText;

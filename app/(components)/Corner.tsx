@@ -4,7 +4,7 @@ interface ICorner {
   children: React.ReactNode;
 }
 
-const Corner = ({ children }: ICorner) => {
+export const Corner = ({ children }: ICorner) => {
   return (
     <div className="absolute bottom-0 right-0 flex flex-col items-end">
       <div className="corner" />
@@ -17,5 +17,3 @@ const Corner = ({ children }: ICorner) => {
     </div>
   );
 };
-
-export default Corner;

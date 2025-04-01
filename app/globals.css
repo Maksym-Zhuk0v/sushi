@@ -5,7 +5,7 @@
 @layer components {
   .starIcon {
     @apply bg-center w-4 h-4 bg-no-repeat bg-contain;
-    background-image: url(../public/starIcon.png);
+    background-image: url(/starIcon.png);
   }
   .burger-slice {
     @apply h-one-px bg-icon-default w-5;
@@ -101,20 +101,20 @@
     font-size: 18px;
     z-index: 2;
   }
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
 
-body {
-  background-color: #0a0b0a;
-  border-color: inherit;
-}
+  body {
+    background-color: #0a0b0a;
+    border-color: inherit;
+  }
 
-input,
-textarea {
-  outline: none;
+  input,
+  textarea {
+    outline: none;
+  }
 }

@@ -1,9 +1,9 @@
-export type TMenu = {
+export interface TMenu {
   _id: string;
   type: string;
   name: string;
   title: string;
   price: number;
   image: string;
-  sort: number;
-};
+  sort?: number;
+}

@@ -1,4 +1,4 @@
-import { TBlog } from "@/models/types/Blog";
+import TBlog from "@/models/types/Blog";
 import { Raleway } from "next/font/google";
 import React from "react";
 
@@ -13,7 +13,7 @@ interface IFormProps {
   setIsUrl: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Form = ({ form, setForm, setIsUrl }: IFormProps) => {
+export const Form = ({ form, setForm, setIsUrl }: IFormProps) => {
   const handleBodyChange = (index: number, field: string, value: string) => {
     const newBody = form.body.map((paragraph, i) =>
       i === index ? { ...paragraph, [field]: value } : paragraph
@@ -110,5 +110,3 @@ const Form = ({ form, setForm, setIsUrl }: IFormProps) => {
     </div>
   );
 };
-
-export default Form;

@@ -1,11 +1,8 @@
-"use client";
-
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
 import { Forum } from "next/font/google";
-import Corner from "./Corner";
-import ArrowHover from "./UI/ArrowHover";
+import { Corner } from "./Corner";
+import { ArrowHover } from "./UI";
 
 const forum = Forum({ subsets: ["latin"], weight: "400" });
 
@@ -15,33 +12,23 @@ interface ISidebarCard {
   image: StaticImageData;
 }
 
-const SidebarCard = ({ href, name, image }: ISidebarCard) => {
-  const [hover, setHover] = useState(false);
-
+export const SidebarCard = ({ href, name, image }: ISidebarCard) => {
   return (
     <Link
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
       href={href}
-      className="rounded-2xl w-full grow lg:w-full md:w-1 bg-default lg:h-1 overflow-hidden relative"
+      className="rounded-2xl w-full grow lg:w-full md:w-1 bg-default lg:h-1 overflow-hidden relative group"
     >
       <Image
         src={image}
         alt="name"
-        className="bg-dflt transition-all duration-300"
-        style={{
-          opacity: hover ? "100%" : "70%",
-          objectFit: "cover",
-        }}
+        className="bg-dflt transition-all duration-300 opacity-75 group-hover:opacity-100 object-cover"
       />
       <Corner>
         <div className="flex gap-2 items-center">
           <div className={`${forum.className} text-base`}>{name}</div>
-          <ArrowHover hover={hover} />
+          <ArrowHover />
         </div>
       </Corner>
     </Link>
   );
 };
-
-export default SidebarCard;

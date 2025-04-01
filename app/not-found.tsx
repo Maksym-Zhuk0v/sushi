@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import HeaderText from "./(components)/UI/HeaderText";
+import { HeaderText } from "./(components)/UI";
 
 export default function NotFound() {
   const router = useRouter();

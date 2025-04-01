@@ -1,5 +1,4 @@
 import React from "react";
-import PageLayout from "../(components)/PageLayout";
 import bg from "../../public/modern-cafe-interior.webp";
 import { Raleway } from "next/font/google";
 import top1 from "../../public/food-photography-session.webp";
@@ -9,8 +8,8 @@ import bot1 from "../../public/salmon-plate.webp";
 import bot2 from "../../public/rice-plate.webp";
 import bot3 from "../../public/black-plate-sushi.webp";
 import { ImagesView } from "../(components)/ImagesView";
-import PageComponent from "../(components)/PageComponent";
-import HeaderText from "../(components)/UI/HeaderText";
+import { PageComponent, PageLayout } from "../(components)";
+import { HeaderText } from "../(components)/UI";
 
 const releway = Raleway({
   subsets: ["latin"],

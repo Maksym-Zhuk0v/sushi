@@ -1,9 +1,8 @@
 import React from "react";
-import PageLayout from "../(components)/PageLayout";
 import bg from "../../public/taking-photo-on-phone.webp";
 import { Raleway } from "next/font/google";
-import PageComponent from "../(components)/PageComponent";
-import HeaderText from "../(components)/UI/HeaderText";
+import { PageComponent, PageLayout } from "../(components)";
+import { HeaderText } from "../(components)/UI";
 
 const releway = Raleway({
   subsets: ["latin"],

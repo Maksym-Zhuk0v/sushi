@@ -7,7 +7,7 @@ interface IMotionP {
   children: string;
 }
 
-const MotionP = ({ children }: IMotionP) => {
+export const MotionP = ({ children }: IMotionP) => {
   return (
     <motion.div
       initial="hidden"
@@ -25,11 +25,9 @@ const MotionP = ({ children }: IMotionP) => {
           },
         },
       }}
-      className="max-w-text-layout leading-mainPage text-layout-page-small md:text-layout-page xl:text-layout-page-large tracking-mainPage absolute left-8 bottom-8 md:left-16 md:bottom-14 text-wrap z-20"
+      className="max-w-text-layout leading-mainPage text-layout-page-small md:text-layout-page xl:text-layout-page-large tracking-mainPage absolute left-8 bottom-8 md:left-16 md:bottom-14 text-wrap z-20 blog-body-restrictions"
     >
       {children.toUpperCase()}
     </motion.div>
   );
 };
-
-export default MotionP;

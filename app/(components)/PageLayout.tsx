@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
-import MotionP from "./UI/MotionP";
-import Header from "./Header";
+import { Header } from "./Header";
+import { MotionP } from "./UI";
 
 interface IPageLayout {
   children: ReactNode;
   text: string;
 }
 
-const PageLayout = ({ children, text }: IPageLayout) => {
+export const PageLayout = ({ children, text }: IPageLayout) => {
   return (
     <div className="w-full flex flex-col lg:grow lg:w-1 h-screen lg:sticky top-0 p-4 lg:pr-0 xl:p-6 xl:pr-0 z-20">
       <Header className="absolute top-16 left-16" />
@@ -19,5 +19,3 @@ const PageLayout = ({ children, text }: IPageLayout) => {
     </div>
   );
 };
-
-export default PageLayout;
