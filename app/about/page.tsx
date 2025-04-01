@@ -9,35 +9,7 @@ import bot2 from "../../public/rice-plate.webp";
 import bot3 from "../../public/black-plate-sushi.webp";
 import { ImagesView } from "../(components)/ImagesView";
 import { PageComponent, PageLayout } from "../(components)";
-import { HeaderText } from "../(components)/UI";
-
-const releway = Raleway({
-  subsets: ["latin"],
-  weight: "200",
-});
-
-interface IInfoLabel {
-  title: string;
-  body: string;
-}
-
-export const InfoLabel = ({ title, body }: IInfoLabel) => {
-  return (
-    <div className="grow w-1 border-dflt rounded-2xl h-full flex flex-col items-center justify-center gap-1">
-      <div className="flex gap-1">
-        <div className="starIcon" />
-        <div className="starIcon" />
-        <div className="starIcon" />
-        <div className="starIcon" />
-        <div className="starIcon" />
-      </div>
-      <p className="text-xs sm:text-sm md:text-2xl lg:text-base xl:text-2xl">
-        {title}
-      </p>
-      <p className={`${releway.className} text-xs tracking-wider`}>{body}</p>
-    </div>
-  );
-};
+import { HeaderText, InfoLabel } from "../(components)/UI";
 
 const page = () => {
   const topImags = [top3, top1, top2];
@@ -60,7 +32,7 @@ const page = () => {
               <p className="text-about-info-main tracking-wider leading-about">
                 SUSHI ARTISTRY REDEFINED
               </p>
-              <p className={`${releway.className} text-base`}>
+              <p className="text-base">
                 Where culinary craftsmanship meets modern elegance. Indulge in
                 the finest sushi, expertly curated to elevate your dining
                 experience.
@@ -83,7 +55,7 @@ const page = () => {
               <HeaderText className="tracking-wider leading-about text-center text-2xl mx-auto">
                 OUR STORY
               </HeaderText>
-              <p className={`${releway.className} text-base`}>
+              <p className="text-base">
                 Founded with a passion for culinary excellence, Qitchen's
                 journey began in the heart of Prague. Over years, it evolved
                 into a haven for sushi enthusiasts, celebrated for its artful

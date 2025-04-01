@@ -5,3 +5,4 @@ export { MenuIcon } from "./MenuIcon";
 export { MotionP } from "./MotionP";
 export { HeaderText } from "./HeaderText";
 export { BlogCard } from "./BlogCard";
+export { InfoLabel } from "./info-label";
