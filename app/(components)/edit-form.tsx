@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useBlogStore } from "../stores/useBlogStore";
 import { Form } from "./Form";
-import { faRemove } from "@fortawesome/free-solid-svg-icons";
 
 export const EditForm = ({ id }: { id: string }) => {
   const router = useRouter();
