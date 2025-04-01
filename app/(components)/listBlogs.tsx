@@ -5,7 +5,6 @@ import { useBlogStore } from "../stores/useBlogStore";
 import React, { useEffect } from "react";
 import { BlogCard, HeaderText } from "./UI";
 import Link from "next/link";
-import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { useUserStore } from "../stores/useUserStore";
 
 export const ListBlogs = () => {

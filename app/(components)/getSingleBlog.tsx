@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import { useBlogStore } from "@/app/stores/useBlogStore";
 import { HeaderText } from "./UI";
 import Link from "next/link";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { useUserStore } from "../stores/useUserStore";
 
 export const GetSingleBlog = ({ id }: { id: string }) => {
