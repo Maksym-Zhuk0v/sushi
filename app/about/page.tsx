@@ -1,6 +1,5 @@
 import React from "react";
 import bg from "../../public/modern-cafe-interior.webp";
-import { Raleway } from "next/font/google";
 import top1 from "../../public/food-photography-session.webp";
 import top2 from "../../public/taking-photo-on-phone.webp";
 import top3 from "../../public/herbs-plate.webp";

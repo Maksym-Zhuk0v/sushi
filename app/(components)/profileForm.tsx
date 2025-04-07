@@ -1,38 +1,43 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
+// import React, { useEffect, useState } from "react";
 import { useUserStore } from "../stores/useUserStore";
-import { HeaderText } from "./UI";
+// import { HeaderText } from "./UI";
 
 export const ProfileForm = () => {
-  const [isSignUp, setIsSignUp] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const { checkBackend } = useUserStore();
 
-  const { user, checkAuth, checkingAuth, signup, login, logout } =
-    useUserStore();
+  const isBackEnd = checkBackend();
+  // const [isSignUp, setIsSignUp] = useState(false);
+  // const [form, setForm] = useState({
+  //   name: "",
+  //   email: "",
+  //   password: "",
+  //   confirmPassword: "",
+  // });
 
-  useEffect(() => {
-    checkAuth();
-  }, []);
+  // const { user, checkAuth, checkingAuth, signup, login, logout } =
+  //   useUserStore();
 
-  if (checkingAuth) return <p>Loading...</p>;
+  // useEffect(() => {
+  //   checkAuth();
+  // }, []);
 
-  const handleSubmit = async () => {
-    if (isSignUp) {
-      await signup(form);
-    } else {
-      await login(form.email, form.password);
-    }
-  };
+  // if (checkingAuth) return <p>Loading...</p>;
+
+  // const handleSubmit = async () => {
+  //   if (isSignUp) {
+  //     await signup(form);
+  //   } else {
+  //     await login(form.email, form.password);
+  //   }
+  // };
 
   return (
     <div className="flex flex-col gap-8 w-96 mt-12 mx-auto">
-      {user !== null ? (
+      <button onClick={() => checkBackend()}>console is backend</button>
+      {/* {user !== null ? (
         <div className="flex flex-col gap-4 border-border border rounded-2xl p-8">
           <p className="text-xl">Name: {user.name}</p>
           <p className="text-xl">Email: {user.email}</p>
@@ -98,7 +103,7 @@ export const ProfileForm = () => {
               : "Don't have an account? Sign Up"}
           </button>
         </>
-      )}
+      )} */}
     </div>
   );
 };

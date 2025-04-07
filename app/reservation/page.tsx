@@ -1,13 +1,8 @@
 import React from "react";
 import bg from "../../public/woman-sitting-at-table.webp";
-import { Raleway } from "next/font/google";
 import { PageComponent, PageLayout } from "../(components)";
 import { HeaderText } from "../(components)/UI";
-
-const releway = Raleway({
-  subsets: ["latin"],
-  weight: "300",
-});
+import { raleway } from "@/lib/fonts";
 
 const page = () => {
   return (
@@ -24,13 +19,13 @@ const page = () => {
         <div className="border-container p-24 flex flex-col">
           <HeaderText className="text-center text-4xl">RESERVATION</HeaderText>
           <p
-            className={`${releway.className} text-text-secondary mx-auto mt-4 max-w-96 text-center text-base`}
+            className={`${raleway.className} text-text-secondary mx-auto mt-4 max-w-96 text-center text-base`}
           >
             Secure your spot at Qitchen, where exceptional sushi and a
             remarkable dining experience await.
           </p>
           <div
-            className={`${releway.className} flex w-full flex-col gap-4 mt-16`}
+            className={`${raleway.className} flex w-full flex-col gap-4 mt-16`}
           >
             <input placeholder="Name" className="input-reservation" />
             <input placeholder="Email" className="input-reservation" />

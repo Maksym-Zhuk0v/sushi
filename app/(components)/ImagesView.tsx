@@ -11,30 +11,25 @@ interface IImagesView {
 }
 
 const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
+  enter: (direction: number) => ({
+    x: direction > 0 ? 100 : -100,
+    opacity: 0,
+  }),
   center: {
     zIndex: 1,
     x: 0,
     opacity: 1,
   },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
+  exit: (direction: number) => ({
+    zIndex: 0,
+    x: direction < 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
 };
 
 const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-  return Math.abs(offset) * velocity;
-};
+const swipePower = (offset: number, velocity: number) =>
+  Math.abs(offset) * velocity;
 
 export const ImagesView = ({ images }: IImagesView) => {
   const [[page, direction], setPage] = useState([0, 0]);
@@ -48,10 +43,7 @@ export const ImagesView = ({ images }: IImagesView) => {
     <>
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
-          style={{
-            backgroundSize: "cover",
-          }}
-          key={page}
+          key={page} // тут важно page, а не imageIndex
           src={images[imageIndex].src}
           custom={direction}
           variants={variants}
@@ -59,7 +51,7 @@ export const ImagesView = ({ images }: IImagesView) => {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
+            x: { type: "spring", stiffness: 100, damping: 10 },
             opacity: { duration: 0.2 },
           }}
           drag="x"
@@ -73,10 +65,12 @@ export const ImagesView = ({ images }: IImagesView) => {
               paginate(-1);
             }
           }}
+          style={{ backgroundSize: "contain" }}
         />
       </AnimatePresence>
+
       <div
-        className="navigate-images left-2  -scale-x-100"
+        className="navigate-images left-2 -scale-x-100"
         onClick={() => paginate(-1)}
       >
         {"‣"}

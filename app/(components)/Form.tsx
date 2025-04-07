@@ -1,11 +1,6 @@
 import TBlog from "@/models/types/Blog";
-import { Raleway } from "next/font/google";
+import { raleway } from "@/lib/fonts";
 import React from "react";
-
-const releway = Raleway({
-  subsets: ["latin"],
-  weight: "300",
-});
 
 interface IFormProps {
   form: TBlog;
@@ -33,7 +28,7 @@ export const Form = ({ form, setForm, setIsUrl }: IFormProps) => {
   };
 
   return (
-    <div className={`${releway.className} flex w-full flex-col gap-4 mt-16`}>
+    <div className={`${raleway.className} flex w-full flex-col gap-4 mt-16`}>
       <p>Title</p>
       <input
         value={form["title"]}

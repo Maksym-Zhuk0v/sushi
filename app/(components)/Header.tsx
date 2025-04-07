@@ -3,13 +3,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import logoName from "../../public/logo.jpeg";
-import { Raleway } from "next/font/google";
+import { raleway } from "@/lib/fonts";
 import Link from "next/link";
-
-const raleway = Raleway({
-  subsets: ["latin"],
-  weight: "300",
-});
 
 interface IHeader {
   className?: string;
@@ -65,7 +60,7 @@ export const Header = ({ className }: IHeader) => {
         <div className="fixed inset-0 bg-default p-6 z-30">
           <div
             onClick={() => setActive(false)}
-            className="top-14 left-14 before:header-burger-slice after:header-burger-slice before:rotate-45 after:-rotate-45 hover:after:rotate-0 hover:before:rotate-0 w-header-icon h-header-icon bg-muted border-dflt absolute flex flex-col items-center justify-center rounded-lg cursor-pointer hover:bg-muted-hover"
+            className="top-[72px] left-[72px] before:header-burger-slice after:header-burger-slice before:rotate-45 after:-rotate-45 hover:after:rotate-0 hover:before:rotate-0 w-header-icon h-header-icon bg-muted border-dflt absolute flex flex-col items-center justify-center rounded-lg cursor-pointer hover:bg-muted-hover"
           ></div>
           <div className="border-container bg-muted flex items-center justify-center">
             <div className="flex flex-col items-center sm:gap-2 lg:gap-4">

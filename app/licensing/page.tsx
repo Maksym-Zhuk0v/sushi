@@ -1,13 +1,8 @@
 import React from "react";
 import bg from "../../public/taking-photo-on-phone.webp";
-import { Raleway } from "next/font/google";
+import { raleway } from "@/lib/fonts";
 import { PageComponent, PageLayout } from "../(components)";
 import { HeaderText } from "../(components)/UI";
-
-const releway = Raleway({
-  subsets: ["latin"],
-  weight: "300",
-});
 
 const page = () => {
   return (
@@ -25,7 +20,7 @@ const page = () => {
           <HeaderText className="text-about-info-main text-center mx-auto">
             LICENSING
           </HeaderText>
-          <p className={`${releway.className} text-lg text-center mt-2`}>
+          <p className={`${raleway.className} text-lg text-center mt-2`}>
             All graphical assets in this template are licensed for personal and
             commercial use. If you'd like to use a specific asset, please check
             the license.
@@ -33,12 +28,12 @@ const page = () => {
           <div className="mt-16">
             <p className="text-2xl">IMAGES</p>
             <div className="w-full flex mt-16">
-              <p className={`${releway.className} text-xs w-6/12`}>PEXES</p>
+              <p className={`${raleway.className} text-xs w-6/12`}>PEXES</p>
               <div className="w-6/12">
-                <p className={`${releway.className} text-xs w-6/12`}>
+                <p className={`${raleway.className} text-xs w-6/12`}>
                   IMAGE COLLECTION
                 </p>
-                <p className={`${releway.className} text-xs w-6/12 mt-8`}>
+                <p className={`${raleway.className} text-xs w-6/12 mt-8`}>
                   LICENSE
                 </p>
               </div>

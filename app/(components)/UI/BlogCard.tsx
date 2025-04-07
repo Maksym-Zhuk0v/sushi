@@ -1,12 +1,7 @@
 import React from "react";
-import { Raleway } from "next/font/google";
+import { raleway } from "@/lib/fonts";
 import Link from "next/link";
 import TBlog from "@/models/types/Blog";
-
-const raleway = Raleway({
-  subsets: ["latin"],
-  weight: "200",
-});
 
 export const BlogCard = ({ card }: { card: TBlog }) => {
   const date = new Date(card?.lastModified);

@@ -1,10 +1,8 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { Forum } from "next/font/google";
 import { Corner } from "./Corner";
 import { ArrowHover } from "./UI";
-
-const forum = Forum({ subsets: ["latin"], weight: "400" });
+import { forum } from "@/lib/fonts";
 
 interface ISidebarCard {
   href: string;

@@ -1,14 +1,9 @@
 import { TMenu } from "@/models/types/Menu";
-import { Raleway } from "next/font/google";
+import { raleway } from "@/lib/fonts";
 
 interface IMenuIcon {
   card: TMenu;
 }
-
-const releway = Raleway({
-  subsets: ["latin"],
-  weight: "200",
-});
 
 export const MenuIcon = ({ card }: IMenuIcon) => {
   return (
@@ -25,7 +20,7 @@ export const MenuIcon = ({ card }: IMenuIcon) => {
             <p className="text-xl">{card.name}</p>
             <div className="h-2 grow border-dflt-top border-dotted" />
           </div>
-          <p className={`${releway.className} text-sm text-text-secondary`}>
+          <p className={`${raleway.className} text-sm text-text-secondary`}>
             {card.title}
           </p>
         </div>

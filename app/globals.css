@@ -88,7 +88,7 @@
   .navigate-images {
     top: calc(50% - 20px);
     position: absolute;
-    background: white;
+    background: #0a0b0a;
     border-radius: 30px;
     width: 40px;
     height: 40px;

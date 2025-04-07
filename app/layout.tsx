@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Forum } from "next/font/google";
+import { forum } from "@/lib/fonts";
 import React from "react";
-
-const forum = Forum({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Quithen - Restaurant Framer",
