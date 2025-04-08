@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 // import React, { useEffect, useState } from "react";
 import { useUserStore } from "../stores/useUserStore";
+import toast from "react-hot-toast";
 // import { HeaderText } from "./UI";
 
 export const ProfileForm = () => {
@@ -34,9 +35,27 @@ export const ProfileForm = () => {
   //   }
   // };
 
+  const checkByFetch = async () => {
+    console.log(process.env.NEXT_PUBLIC_API_URL);
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mail`);
+    const res = await fetch(`https://sushi-backend-ruby.vercel.app/api/mail`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${process.env.VERCEL_API_TOKEN}`,
+      },
+    });
+    toast.success(JSON.stringify(res));
+    const data = await res.json();
+    console.log(data);
+  };
+
   return (
     <div className="flex flex-col gap-8 w-96 mt-12 mx-auto">
       <button onClick={() => checkBackend()}>console is backend</button>
+      <button onClick={() => checkByFetch()}>
+        console is backend by fetch
+      </button>
+      {process.env.NEXT_PUBLIC_GOOGLE_MAP}
       {/* {user !== null ? (
         <div className="flex flex-col gap-4 border-border border rounded-2xl p-8">
           <p className="text-xl">Name: {user.name}</p>
