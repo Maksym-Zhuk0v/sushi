@@ -34,6 +34,7 @@ export const useUserStore = create((set, get) => ({
   checkBackend: async () => {
     try {
       const response = await axios.get("/mail");
+      console.log(response.data);
       toast.success(response.data);
     } catch (error) {
       console.log(error.message);

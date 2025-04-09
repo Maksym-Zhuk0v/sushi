@@ -36,17 +36,9 @@ export const ProfileForm = () => {
   // };
 
   const checkByFetch = async () => {
-    console.log(process.env.NEXT_PUBLIC_API_URL);
-    // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mail`);
-    const res = await fetch(`https://sushi-backend-ruby.vercel.app/api/mail`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${process.env.VERCEL_API_TOKEN}`,
-      },
-    });
-    toast.success(JSON.stringify(res));
-    const data = await res.json();
-    console.log(data);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mail`);
+    const text = await res.text();
+    toast.success(text);
   };
 
   return (
