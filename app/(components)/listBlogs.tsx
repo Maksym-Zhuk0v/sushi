@@ -11,9 +11,9 @@ export const ListBlogs = () => {
   const { blogs, fetchAllBlogs } = useBlogStore();
   const { user, checkAuth } = useUserStore();
 
-  useEffect(() => {
-    checkAuth();
-  }, [checkAuth]);
+  // useEffect(() => {
+  //   checkAuth();
+  // }, [checkAuth]);
 
   React.useEffect(() => {
     fetchAllBlogs();
