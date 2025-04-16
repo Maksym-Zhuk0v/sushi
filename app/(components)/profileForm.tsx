@@ -1,54 +1,39 @@
 "use client";
 
-import { useEffect } from "react";
-// import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useUserStore } from "../stores/useUserStore";
 import toast from "react-hot-toast";
-// import { HeaderText } from "./UI";
+import { HeaderText } from "./UI";
 
 export const ProfileForm = () => {
-  const { checkBackend } = useUserStore();
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-  const isBackEnd = checkBackend();
-  // const [isSignUp, setIsSignUp] = useState(false);
-  // const [form, setForm] = useState({
-  //   name: "",
-  //   email: "",
-  //   password: "",
-  //   confirmPassword: "",
-  // });
+  const { user, checkAuth, checkingAuth, signup, login, logout } =
+    useUserStore();
 
-  // const { user, checkAuth, checkingAuth, signup, login, logout } =
-  //   useUserStore();
+  useEffect(() => {
+    checkAuth();
+  }, []);
 
-  // useEffect(() => {
-  //   checkAuth();
-  // }, []);
+  if (checkingAuth) return <p>Loading...</p>;
 
-  // if (checkingAuth) return <p>Loading...</p>;
-
-  // const handleSubmit = async () => {
-  //   if (isSignUp) {
-  //     await signup(form);
-  //   } else {
-  //     await login(form.email, form.password);
-  //   }
-  // };
-
-  const checkByFetch = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mail`);
-    const text = await res.text();
-    toast.success(text);
+  const handleSubmit = async () => {
+    if (isSignUp) {
+      await signup(form);
+    } else {
+      await login(form.email, form.password);
+    }
   };
 
   return (
     <div className="flex flex-col gap-8 w-96 mt-12 mx-auto">
-      <button onClick={() => checkBackend()}>console is backend</button>
-      <button onClick={() => checkByFetch()}>
-        console is backend by fetch
-      </button>
-      {process.env.NEXT_PUBLIC_GOOGLE_MAP}
-      {/* {user !== null ? (
+      {user !== null ? (
         <div className="flex flex-col gap-4 border-border border rounded-2xl p-8">
           <p className="text-xl">Name: {user.name}</p>
           <p className="text-xl">Email: {user.email}</p>
@@ -114,7 +99,7 @@ export const ProfileForm = () => {
               : "Don't have an account? Sign Up"}
           </button>
         </>
-      )} */}
+      )}
     </div>
   );
 };
