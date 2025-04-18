@@ -2,7 +2,7 @@ export { Corner } from "./Corner";
 export { Form } from "./Form";
 export { GetSingleBlog } from "./getSingleBlog";
 export { Header } from "./Header";
-export { ImagesView } from "./ImagesView";
+export { Carousel } from "./carousel";
 export { ListBlogs } from "./listBlogs";
 export { MapComponent } from "./map-component";
 export { PageComponent } from "./PageComponent";

@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 import { BlogCard, HeaderText } from "./UI";
 import Link from "next/link";
 import { useUserStore } from "../stores/useUserStore";
+import { SquarePlus } from "lucide-react";
 
 export const ListBlogs = () => {
   const { blogs, fetchAllBlogs } = useBlogStore();
@@ -21,7 +22,11 @@ export const ListBlogs = () => {
 
   return (
     <div className="flex flex-col gap-8">
-      {user?.role === "admin" && <Link href={"/blog/create"}></Link>}
+      {user?.role === "admin" && (
+        <Link className="self-end" href={"/blog/create"}>
+          <SquarePlus />
+        </Link>
+      )}
       {blogs.length === 0 ? (
         <HeaderText className="text-center text-about-info-main tracking-wider">
           There is no blogs created

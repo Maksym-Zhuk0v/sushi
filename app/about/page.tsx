@@ -6,8 +6,8 @@ import top3 from "../../public/herbs-plate.webp";
 import bot1 from "../../public/salmon-plate.webp";
 import bot2 from "../../public/rice-plate.webp";
 import bot3 from "../../public/black-plate-sushi.webp";
-import { ImagesView } from "../(components)/ImagesView";
-import { PageComponent, PageLayout } from "../(components)";
+// import { ImagesView } from "../(components)/ImagesView";
+import { Carousel, PageComponent, PageLayout } from "../(components)";
 import { HeaderText, InfoLabel } from "../(components)/UI";
 
 const page = () => {
@@ -38,7 +38,7 @@ const page = () => {
               </p>
             </div>
             <div className="border-dflt rounded-2xl h-full w-45-about flex overflow-hidden relative">
-              <ImagesView images={topImags} />
+              <Carousel row={topImags} />
             </div>
           </div>
           <div className="w-full h-about flex gap-4">
@@ -48,7 +48,7 @@ const page = () => {
           </div>
           <div className="grow flex gap-4 w-full h-1">
             <div className="border-dflt rounded-2xl h-full w-45-about flex overflow-hidden relative">
-              <ImagesView images={botImags} />
+              <Carousel row={botImags} />
             </div>
             <div className="border-dflt rounded-2xl h-full w-55-about p-4 sm:p-12 lg:p-8 xl:p-12 flex flex-col justify-between">
               <HeaderText className="tracking-wider leading-about text-center text-2xl mx-auto">
