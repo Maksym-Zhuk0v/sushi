@@ -5,6 +5,7 @@ import { useBlogStore } from "@/app/stores/useBlogStore";
 import { HeaderText } from "./UI";
 import Link from "next/link";
 import { useUserStore } from "../stores/useUserStore";
+import { FilePenLine, SquarePlus } from "lucide-react";
 
 export const GetSingleBlog = ({ id }: { id: string }) => {
   const { singleBlog, loading } = useBlogStore();
@@ -26,10 +27,7 @@ export const GetSingleBlog = ({ id }: { id: string }) => {
     <div className="w-full flex flex-col px-4 md:px-24 lg:px-4 xl:px-24 py-12">
       {user?.role === "admin" && (
         <Link href={`/blog/view/${id}/edit`}>
-          {/* <FontAwesomeIcon
-            className="absolute top-12 right-12 w-8 h-8 cursor-pointer"
-            icon={faEdit}
-          /> */}
+          <FilePenLine size={24} className="absolute top-8 right-8" />
         </Link>
       )}
       <HeaderText>

@@ -25,7 +25,7 @@ export const MotionP = ({ children }: IMotionP) => {
           },
         },
       }}
-      className="max-w-text-layout leading-mainPage text-layout-page-small md:text-layout-page xl:text-layout-page-large tracking-mainPage absolute left-8 bottom-8 md:left-16 md:bottom-14 text-wrap z-20 blog-body-restrictions"
+      className="max-w-[570px] leading-mainPage text-layout-page-small md:text-layout-page xl:text-layout-page-large tracking-mainPage absolute left-8 bottom-8 md:left-16 md:bottom-14 text-wrap z-20 blog-body-restrictions"
     >
       {children.toUpperCase()}
     </motion.div>

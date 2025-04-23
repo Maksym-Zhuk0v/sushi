@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useBlogStore } from "../stores/useBlogStore";
 import { Form } from "./Form";
+import { CircleX } from "lucide-react";
 
 export const EditForm = ({ id }: { id: string }) => {
   const router = useRouter();
@@ -56,7 +57,7 @@ export const EditForm = ({ id }: { id: string }) => {
         className="absolute top-12 right-12 w-8 h-8 cursor-pointer"
         onClick={(e) => handleDelete(e)}
       >
-        {/* <FontAwesomeIcon className="h-full w-full" icon={faRemove} /> */}
+        <CircleX />
       </div>
       <Form form={form} setForm={setForm} setIsUrl={setIsUrl} />
       <button
